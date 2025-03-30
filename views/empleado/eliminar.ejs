@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Cliente</title>
+    <title>Eliminar Empleado</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,53 +13,53 @@
 <body>
 
     <div class="container mt-5">
-        <h2 class="text-center text-danger">Eliminar Cliente</h2>
+        <h2 class="text-center text-danger">Eliminar Empleado</h2>
 
         <div class="alert alert-danger text-center" role="alert">
             <i class="bi bi-exclamation-triangle-fill"></i> 
-            ¿Estás seguro de que deseas eliminar este cliente? Esta acción no se puede deshacer.
+            ¿Estás seguro de que deseas eliminar este empleado? Esta acción no se puede deshacer.
         </div>
 
         <div class="card p-4 shadow-lg">
-            <form action="/delete" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este cliente?');">
+            <form action="/delete2" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este empleado?');">
                 <div class="row">
                     
                     <div class="col-md-6 mb-3">
                         <label class="form-label"><i class="bi bi-hash"></i> Código</label>
-                        <input type="text" name="codigo" class="form-control-plaintext" value="<%= clientes.codigo %>" readonly>
+                        <input type="text" name="codigo" class="form-control-plaintext" value="<%= empleados.codigo %>" readonly>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label"><i class="bi bi-person"></i> Nombre</label>
-                        <input type="text" name="nombre" class="form-control-plaintext" value="<%= clientes.nombre %>" readonly>
+                        <input type="text" name="nombre" class="form-control-plaintext" value="<%= empleados.nombre %>" readonly>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label"><i class="bi bi-person"></i> Apellido</label>
-                        <input type="text" name="apellido" class="form-control-plaintext" value="<%= clientes.apellido %>" readonly>
+                        <input type="text" name="apellido" class="form-control-plaintext" value="<%= empleados.apellido %>" readonly>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label class="form-label"><i class="bi bi-calendar"></i> Edad</label>
-                        <input type="text" name="edad" class="form-control-plaintext" value="<%= clientes.edad %>" readonly>
+                        <label class="form-label"><i class="bi bi-calendar"></i> Fecha</label>
+                        <input type="date" name="fecha" class="form-control-plaintext" value="<%= empleados.fecha %>" readonly>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label"><i class="bi bi-cash"></i> Sueldo</label>
+                        <input type="text" name="sueldo" class="form-control-plaintext" value="<%= empleados.sueldo %>" readonly>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label"><i class="bi bi-telephone"></i> Teléfono</label>
-                        <input type="text" name="telefono" class="form-control-plaintext" value="<%= clientes.telefono %>" readonly>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label"><i class="bi bi-geo-alt"></i> Ciudad</label>
-                        <input type="text" name="ciudad" class="form-control-plaintext" value="<%= clientes.ciudad %>" readonly>
+                        <input type="text" name="telefono" class="form-control-plaintext" value="<%= empleados.telefono %>" readonly>
                     </div>
                 </div>
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-danger">
-                        <i class="bi bi-trash"></i> Eliminar Cliente
+                        <i class="bi bi-trash"></i> Eliminar Empleado
                     </button>
-                    <a href="/Cliente2" class="btn btn-secondary">
+                    <a href="/Empleado" class="btn btn-secondary">
                         <i class="bi bi-arrow-left"></i> Cancelar
                     </a>
                 </div>

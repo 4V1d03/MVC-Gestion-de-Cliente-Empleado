@@ -1,40 +1,81 @@
-<!--es el encargado de renderizar las plantillas, ejs pemite tener codigo html y js en uno solo -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Empleados</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 <body>
-    <h1>Lista de Empleados</h1>
-    
 
+    <div class="container mt-5">
+        <h1 class="text-center">Lista de Empleados</h1>
 
+        <div class="d-flex justify-content-between mb-3">
+            <a href="/crear2" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Agregar Empleado
+            </a>
+            <a href="/Idioma" class="btn btn-secondary">
+                <i class="bi bi-translate"></i> Ir a Idiomas
+            </a>
+        </div>
 
+        <!--
+        <div class="text-end mb-3">
+            <a href="/crear2" class="btn btn-success">
+                <i class="bi bi-person-plus"></i> Agregar Empleado
+            </a>
+        </div>
+        -->
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Fecha</th>
+                        <th>Sueldo</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <% empleados.forEach((dato) => { %>
+                        <tr>
+                            <td><%= dato.codigo %></td>
+                            <td><%= dato.nombre %></td>
+                            <td><%= dato.apellido %></td>
+                            <td><%= dato.fecha %></td>
+                            <td><%= dato.sueldo %></td>
+                            <td><%= dato.telefono %></td>
+                            <td>
+                                <a href="/editar2/<%= dato.codigo %>" class="btn btn-warning btn-sm" title="Editar">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a href="/ver2/<%= dato.codigo %>" class="btn btn-info btn-sm text-white" title="Ver">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="/eliminar2/<%= dato.codigo %>" class="btn btn-danger btn-sm" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este empleado?')">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                                <a href="/agregar/<%= dato.codigo %>" class="btn btn-primary btn-sm" title="Agregar Idiomas">
+                                    <i class="bi bi-translate"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
